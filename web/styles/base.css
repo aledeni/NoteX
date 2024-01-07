@@ -1,0 +1,14 @@
+body{
+    margin:0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    overflow: hidden;
+  }
+
+
+@font-face {
+    font-family: 'Vivaldi Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Vivaldi Italic'), url('./VIVALDII.woff') format('woff');
+}

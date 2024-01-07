@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="dominio.Segnalazione" table="SEGNALAZIONI">
+		<id name="id" column="Id">
+			<generator class="identity" />
+		</id>
+		<property name="testo" column="Testo" />
+		<property name="stato" column="Stato">
+			<type name="org.hibernate.type.EnumType">
+				<param name="enumClass">dominio.StatoSegnalazione</param>
+				<param name="useNamed">true</param>
+			</type>
+		</property>
+		<many-to-one name="utenteSegnalante"
+			class="dominio.UtenteRegistrato">
+			<column name="UtenteSegnalanteId" />
+		</many-to-one>
+		<many-to-one name="utenteSegnalato"
+			class="dominio.UtenteRegistrato">
+			<column name="UtenteSegnalatoId" />
+		</many-to-one>
+		<many-to-one name="assistente" class="dominio.Assistente">
+			<column name="AssistenteId" />
+		</many-to-one>
+	</class>
+</hibernate-mapping>

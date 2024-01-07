@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="dominio.Nota" table="NOTE">
+     <id name="id" column="Id">
+    	<generator class="identity"/>
+    </id>
+    <property name="nome" column="Nome"/>
+    <property name="percorsoFile" column="PercorsoFile"/>
+    <many-to-one name="bloccoDiAppunti" class="dominio.BloccoDiAppunti"><column name="BloccoDiAppuntiId"/></many-to-one>
+    <bag name="etichette" table="ETICHETTE_NOTE" fetch="select" cascade="all" inverse="true" lazy="false">
+		<key>
+			<column name="NotaId"/>
+		</key>
+		<one-to-many class="dominio.EtichettaNota"/>
+    </bag>
+  </class>
+</hibernate-mapping>

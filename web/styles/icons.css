@@ -1,0 +1,23 @@
+/* Icons */
+.icon{
+    width:24px;
+    height: 24px;
+    padding:2px;
+  }
+  
+  .iconDiv{
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    width:28px;
+    height:28px;
+    border-radius: 3px;
+  }
+  
+  .multipleIconsDiv{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 3px;
+  }

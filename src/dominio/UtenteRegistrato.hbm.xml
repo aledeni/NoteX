@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="dominio.UtenteRegistrato" table="UTENTI_REGISTRATI">
+		<id name="id" column="Id">
+			<generator class="identity" />
+		</id>
+		<property name="username" column="Username" />
+		<property name="passwordHash" column="PasswordHash" />
+		<property name="salt" column="Salt" />
+		<property name="hashAlgorithm" column="HashAlgorithm" />
+		<property name="stato" column="StatoUtente" type="dominio.TipoStatoUtente"/>
+		<!-- <property name="punteggioMedio" column="PunteggioMedio"/> -->
+		<bag name="blocchiDiAppunti" table="BLOCCHI_DI_APPUNTI"
+			fetch="select" cascade="all" inverse="true" lazy="false">
+			<key>
+				<column name="UtenteId" />
+			</key>
+			<one-to-many class="dominio.BloccoDiAppunti" />
+		</bag>
+		<bag name="segnalazioni" table="SEGNALAZIONI" fetch="select"
+			cascade="all" inverse="true" lazy="false">
+			<key>
+				<column name="UtenteSegnalatoId" />
+			</key>
+			<one-to-many class="dominio.Segnalazione" />
+		</bag>
+	</class>
+</hibernate-mapping>

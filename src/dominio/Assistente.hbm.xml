@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="dominio.Assistente" table="ASSISTENTI">
+     <id name="id" column="Id">
+    	<generator class="identity"/>
+    </id>
+    <property name="username" column="Username"/>
+    <property name="passwordHash" column="PasswordHash"/>
+    <property name="salt" column="Salt"/>
+    <property name="hashAlgorithm" column="HashAlgorithm"/>
+    <bag name="segnalazioni" table="SEGNALAZIONI" fetch="select" cascade="all" inverse="true" lazy="false">
+		<key>
+			<column name="Assistente"/>
+		</key>
+		<one-to-many class="dominio.Segnalazione"/>
+    </bag>
+  </class>
+</hibernate-mapping>

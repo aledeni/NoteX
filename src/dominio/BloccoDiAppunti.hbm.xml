@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="dominio.BloccoDiAppunti" table="BLOCCHI_DI_APPUNTI">
+     <id name="id" column="Id">
+    	<generator class="identity"/>
+    </id>
+    <property name="nome" column="Nome"/>
+    <many-to-one name="utenteRegistrato" class="dominio.UtenteRegistrato"><column name="UtenteId"/></many-to-one>
+    <bag name="etichette" table="ETICHETTE_BLOCCHI_DI_APPUNTI" fetch="select" cascade="all" inverse="true" lazy="false">
+		<key>
+			<column name="BloccoDiAppuntiId"/>
+		</key>
+		<one-to-many class="dominio.EtichettaBloccoDiAppunti"/>
+    </bag>
+    <bag name="note" table="NOTE" fetch="select" cascade="all" inverse="true" lazy="false">
+		<key>
+			<column name="BloccoDiAppuntiId"/>
+		</key>
+		<one-to-many class="dominio.Nota"/>
+    </bag>
+  </class>
+</hibernate-mapping>

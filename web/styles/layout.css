@@ -1,0 +1,128 @@
+/* Layout*/
+body{
+    margin:0px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 16px;
+    overflow: hidden;
+  }
+
+
+  @font-face {
+    font-family: 'Vivaldi Italic';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Vivaldi Italic'), url('./VIVALDII.woff') format('woff');
+    }
+
+/*Split-Screen-Layout*/
+.splitScreenLayout{
+  width:100%;
+  height: 100%;
+  flex-direction: row;
+  position:relative;
+}
+.splitScreenLayout > .leftHalf{
+    display:flex;
+    width:50%;
+    height: 100%;
+    background-color: #003049;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s;
+    position: absolute;
+    left:0%;
+    top:0%;
+}
+
+.splitScreenLayout > .leftHalf > img{
+width: 100%;
+height: 100%;
+}
+
+.splitScreenLayout > .rightHalf{
+display:flex;
+width:50%;
+height: 100%;
+flex-direction: column;
+background-color:#003049;
+align-items: center;
+justify-content:center;
+transition: all 1s;
+position:absolute;
+right:0%;
+top:0%;
+}
+
+/* Light-Box */
+.lightBoxLayout{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left:0px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .lightBox{
+    width: 25%;
+    aspect-ratio: 3/4;
+    background-color: field;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: auto;
+  }
+  
+  .lightBox .actions{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  
+  }
+  .lightBox .icondiv.close{
+    margin:5px;
+  }
+  
+  .lightBox .icondiv.close:hover{
+    background-color: #003049;
+  }
+
+  /*Lateral-Bar-Layout*/
+  .lateralBarLayout{
+    width:100%;
+    height: 100%;
+    flex-direction: row;
+    position:relative;
+  }
+  .lateralBarLayout > .leftHalf{
+      display:flex;
+      width:20%;
+      height: 100%;
+      background-color: #003049;
+      align-items: center;
+      justify-content: center;
+      transition: all 1s;
+      position: absolute;
+      left:0%;
+      top:0%;
+  }
+  
+  .lateralBarLayout > .rightHalf{
+  display:flex;
+  width:80%;
+  height: 100%;
+  flex-direction: column;
+  background-color:field;
+  align-items: center;
+  justify-content:center;
+  transition: all 1s;
+  position:absolute;
+  right:0%;
+  top:0%;
+  }

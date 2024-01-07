@@ -1,0 +1,142 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles/base.css">
+        <link rel="stylesheet" href="styles/icons.css">
+        <link rel="stylesheet" href="styles/homeUtente.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="scripts/homeUtente.js"></script>
+    </head>
+    <body onload="init()">
+        <div class="splitScreenLayout">
+            <div class="leftHalf">
+                <img src="resources/images/welcomeImage0.jpg" />
+            </div>
+            <div class="rightHalf">
+                <div class="accessDiv">
+                    <a href="login.html">Accedi</a>
+                    |
+                    <a href="registrazione.html">Registrati</a>
+                </div>
+                
+                <div class="logo">
+                    <img src="resources/icons/logo.svg"/>
+                    <div>NoteX</div>
+                </div>
+                
+                <div class="searchDiv">
+                    <div class="searchBarDiv">
+                        <input class="searchBar" name="searchBar" type="text">
+                        <div class="iconDiv close">
+                            <img class="icon close" src="resources/icons/cross.svg"/>
+                        </div>
+                        <div class="iconDiv search">
+                            <img class="icon search" src="resources/icons/search.svg"/>
+                        </div>
+                        <div class="multipleIconsDiv searchType">
+                            <label class="iconDiv searchType" id="note">
+                                <input type="radio" name="searchType" value="note" checked="checked">
+                                <img class="icon searchType" src="resources/icons/nota.svg">
+                            </label>
+                            <label class="iconDiv searchType" id="blocchiDiAppunti">
+                                <input type="radio" name="searchType" value="blocchiDiAppunti">
+                                <img class="icon searchType" src="resources/icons/bloccoDiAppunti.svg">
+                            </label>
+                            <label class="iconDiv searchType" id="utentiRegistrati">
+                                <input type="radio" name="searchType" value="utentiRegistrati">
+                                <img class="icon searchType" src="resources/icons/utente.svg">
+                            </label>
+                                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="searchResultDiv">
+                    <div class="searchResults">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lightBoxLayout">
+            <div class="lightBox">
+                <div class="actions">
+                    <div class="iconDiv close">
+                        <img class="icon close" src="resources/icons/cross.svg"/>
+                    </div>
+                </div>
+                <div class="reviewableElement">
+                    <div class="iconDiv reviewableType">
+                        <img class="icon reviewableType" src="resources/icons/nota.svg"/>
+                    </div>
+                    <div class="reviewableName">
+                        Web Statico
+                    </div>
+                    <div class="multipleIconsDiv scoreAndstars">
+                        <div class="score">4,2</div>
+                        <img class="icon star" src="resources/icons/star.svg">
+                        <img class="icon star toFill" src="resources/icons/star.svg">
+                        <img class="icon star toFill" src="resources/icons/star.svg">
+                        <img class="icon star toFill" src="resources/icons/star.svg">
+                        <img class="icon star toFill" src="resources/icons/star.svg">
+                    </div>
+                </div>
+                <div class="reviews">
+                    <div class="reviewDiv">
+                        <div class="reviewerDiv">
+                            <div class="icondiv reviewer">
+                                <img class="icon reviewer" src="resources/icons/utente.svg"/>
+                            </div>
+                            utente 1
+                            <div class="multipleIconsDiv stars">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                            </div>
+                        </div>
+                        <div class="reviewText">
+                            testo recensione 1
+                        </div>
+                    </div>
+                    <div class="reviewDiv">
+                        <div class="reviewerDiv">
+                            <div class="icondiv reviewer">
+                                <img class="icon reviewer" src="resources/icons/utente.svg"/>
+                            </div>
+                            utente 2
+                            <div class="multipleIconsDiv stars">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                            </div>
+                        </div>
+                        <div class="reviewText">
+                            testo recensione 2
+                        </div>
+                    </div>
+                    <div class="reviewDiv">
+                        <div class="reviewerDiv">
+                            <div class="icondiv reviewer">
+                                <img class="icon reviewer" src="resources/icons/utente.svg"/>
+                            </div>
+                            utente 3
+                            <div class="multipleIconsDiv stars">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                                <img class="icon star toFill" src="resources/icons/star.svg">
+                            </div>
+                        </div>
+                        <div class="reviewText">
+                            testo recensione 3
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </body>
+</html>

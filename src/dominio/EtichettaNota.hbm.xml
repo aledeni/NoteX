@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE hibernate-mapping PUBLIC
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+  <class name="dominio.EtichettaNota" table="ETICHETTE_NOTE">
+     <id name="id" column="Id">
+    	<generator class="identity"/>
+    </id>
+    <property name="nome" column="Nome"/>
+    <property name="valore" column="Valore"/>
+    <many-to-one name="nota" class="dominio.Nota"><column name="NotaId"/></many-to-one>
+  </class>
+</hibernate-mapping>
